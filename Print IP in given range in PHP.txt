@@ -1,0 +1,34 @@
+<?php
+//ip address sorting
+ 	function ip_range($x,$y){
+ 		$ip_start=split('[.]',$x);
+ 		$ip_end=split('[.]',$y);
+ 		$a=array(); // store ip_start as integer array
+  		$b=array(); // store ip_end as integer array
+ 		$c=array(); // store a as string
+ 		$d=array(); // store b as string
+ 		for ($i=0; $i<4; $i++) { 
+ 			$a[$i]=(int)$ip_start[$i];
+ 			$b[$i]=(int)$ip_end[$i];
+ 		}
+ 		$final_ip=array();
+ 		while ($a!=$b) {
+ 			$a[3]=$a[3]+1;
+ 			for ($i=3; $i>=1 ; $i=$i-1) { 
+ 				if ($a[$i]==256) {
+ 					$a[$i]=0;
+ 					$a[$i-1]+=1;
+ 				}
+
+ 			}
+ 				for ($i=0; $i<4; $i++) { 
+ 					$c[$i]=(string)$a[$i];
+ 					$d[$i]=(string)$b[$i];
+ 				}
+ 			$final_ip=join('.',$c);
+ 			print_r($final_ip); //printing the final IP
+ 			echo '<br>';
+ 		}
+ 	}
+$ip=ip_range("10.1.10.64","10.1.11.70");
+?>
