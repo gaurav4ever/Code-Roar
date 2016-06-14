@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>working with DOM</title>
+		<script type="text/javascript">
+			function change(){
+				var node=document.getElementById("g");
+				while(node.firstChild)
+					node.removeChild(node.firstChild);
+				node.appendChild(document.createTextNode("JavaScript says Hello..."));
+			}
+		</script>
+	</head>
+	<body>
+		<p id="g">
+			Hello <strong>I'am</strong> JavaScript.
+		</p>
+		<input type="button" value="click here" name="ch" onclick="change()" />
+	</body>
+</html>
