@@ -1,0 +1,16 @@
+#header{
+	width: 100%;
+	height: 70px;
+	border: 1px solid #d1d1d1;
+
+}
+#logo{
+	padding-top: 6px;
+}
+#menu-toggle-yes{
+	font-size: 20px;
+	color: #3333FF;
+	text-decoration: none;
+	
+	margin-left: 30px;
+}
